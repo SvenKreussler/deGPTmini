@@ -23,6 +23,8 @@ n_layer = 6
 n_head = 6
 n_embd = 384
 dropout = 0.2
+# Dropout: Eine Technik, die während des Trainings zufällig einige Neuronen deaktiviert,
+# um das Netzwerk zu zwingen, redundante Repräsentationen zu lernen.
 
 learning_rate = 1e-3 # with baby networks can afford to go a bit higher
 max_iters = 5000

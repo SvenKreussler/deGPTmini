@@ -2,13 +2,20 @@ import os
 import requests
 import tiktoken
 import numpy as np
+# abstrakt:Text wird runtergeladen und als UTF 8 codiert.Text wird aufgeteilt in Trainings und Überprüfung Daten. Hier in 90 % Trainingsdaten und 10 % Überprüfungsdaten.
+#(Literatur empfiehlt Aufteilung in 80 % Übung Daten und 20 % Überprüfungsdaten)
+#Trainings und Überprüfung Daten werden Symbolisiert.
+#Jedes Symbol wird mit einer natürlichen Zahl verknüpft.
 
 # download the tiny shakespeare dataset
 input_file_path = os.path.join(os.path.dirname(__file__), 'input.txt')
-if not os.path.exists(input_file_path):
+
+""" if not os.path.exists(input_file_path):
     data_url = 'https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt'
     with open(input_file_path, 'w', encoding='utf-8') as f:
-        f.write(requests.get(data_url).text)
+        f.write(requests.get(data_url).text) """
+# aus kommentiert, da kein Text runtergeladen wird und generisch
+# Datei gelesen wird
 
 with open(input_file_path, 'r', encoding='utf-8') as f:
     data = f.read()
